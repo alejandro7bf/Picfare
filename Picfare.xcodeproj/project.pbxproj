@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05D359E56F39AF1700525226 /* Pods_Picfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D1892211938D5C74627175 /* Pods_Picfare.framework */; };
 		3C0DFCB521F2ECCE006BC9F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DFCB421F2ECCE006BC9F4 /* AppDelegate.swift */; };
-		3C0DFCB721F2ECCE006BC9F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DFCB621F2ECCE006BC9F4 /* ViewController.swift */; };
-		3C0DFCBA21F2ECCE006BC9F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0DFCB821F2ECCE006BC9F4 /* Main.storyboard */; };
 		3C0DFCBC21F2ECCF006BC9F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0DFCBB21F2ECCF006BC9F4 /* Assets.xcassets */; };
-		3C0DFCBF21F2ECCF006BC9F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0DFCBD21F2ECCF006BC9F4 /* LaunchScreen.storyboard */; };
+		3C0DFCC721F2ED0A006BC9F4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DFCC621F2ED0A006BC9F4 /* API.swift */; };
+		3C0DFCCA21F2F368006BC9F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0DFCC921F2F368006BC9F4 /* Main.storyboard */; };
+		3C0DFCCC21F2F4A2006BC9F4 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0DFCCB21F2F4A2006BC9F4 /* Launch Screen.storyboard */; };
+		3C0DFCCF21F2F7F3006BC9F4 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DFCCE21F2F7F3006BC9F4 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C0DFCB121F2ECCE006BC9F4 /* Picfare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picfare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C0DFCB421F2ECCE006BC9F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3C0DFCB621F2ECCE006BC9F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3C0DFCB921F2ECCE006BC9F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C0DFCBB21F2ECCF006BC9F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3C0DFCBE21F2ECCF006BC9F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C0DFCC021F2ECCF006BC9F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C0DFCC621F2ED0A006BC9F4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3C0DFCC921F2F368006BC9F4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../Documents/Main.storyboard; sourceTree = "<group>"; };
+		3C0DFCCB21F2F4A2006BC9F4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../../../../Documents/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		3C0DFCCE21F2F7F3006BC9F4 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = ../../../../Documents/Movie.swift; sourceTree = "<group>"; };
+		7B51ED1538FA9BC5D97D3BB0 /* Pods-Picfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picfare.release.xcconfig"; path = "Pods/Target Support Files/Pods-Picfare/Pods-Picfare.release.xcconfig"; sourceTree = "<group>"; };
+		87834CF16AB681BE362B568D /* Pods-Picfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picfare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Picfare/Pods-Picfare.debug.xcconfig"; sourceTree = "<group>"; };
+		A0D1892211938D5C74627175 /* Pods_Picfare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Picfare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05D359E56F39AF1700525226 /* Pods_Picfare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		336F1A50328FE936FFC47349 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0D1892211938D5C74627175 /* Pods_Picfare.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3C0DFCA821F2ECCE006BC9F4 = {
 			isa = PBXGroup;
 			children = (
 				3C0DFCB321F2ECCE006BC9F4 /* Picfare */,
 				3C0DFCB221F2ECCE006BC9F4 /* Products */,
+				9A59C18AFC2A77F03BA5BC87 /* Pods */,
+				336F1A50328FE936FFC47349 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +71,40 @@
 		3C0DFCB321F2ECCE006BC9F4 /* Picfare */ = {
 			isa = PBXGroup;
 			children = (
+				3C0DFCCD21F2F621006BC9F4 /* Objects */,
 				3C0DFCB421F2ECCE006BC9F4 /* AppDelegate.swift */,
-				3C0DFCB621F2ECCE006BC9F4 /* ViewController.swift */,
-				3C0DFCB821F2ECCE006BC9F4 /* Main.storyboard */,
+				3C0DFCC821F2F268006BC9F4 /* Storyboards */,
+				3C0DFCC621F2ED0A006BC9F4 /* API.swift */,
 				3C0DFCBB21F2ECCF006BC9F4 /* Assets.xcassets */,
-				3C0DFCBD21F2ECCF006BC9F4 /* LaunchScreen.storyboard */,
 				3C0DFCC021F2ECCF006BC9F4 /* Info.plist */,
 			);
 			path = Picfare;
+			sourceTree = "<group>";
+		};
+		3C0DFCC821F2F268006BC9F4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3C0DFCC921F2F368006BC9F4 /* Main.storyboard */,
+				3C0DFCCB21F2F4A2006BC9F4 /* Launch Screen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3C0DFCCD21F2F621006BC9F4 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				3C0DFCCE21F2F7F3006BC9F4 /* Movie.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		9A59C18AFC2A77F03BA5BC87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87834CF16AB681BE362B568D /* Pods-Picfare.debug.xcconfig */,
+				7B51ED1538FA9BC5D97D3BB0 /* Pods-Picfare.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +114,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C0DFCC321F2ECCF006BC9F4 /* Build configuration list for PBXNativeTarget "Picfare" */;
 			buildPhases = (
+				ABF91C66DDB702852A78F5B9 /* [CP] Check Pods Manifest.lock */,
 				3C0DFCAD21F2ECCE006BC9F4 /* Sources */,
 				3C0DFCAE21F2ECCE006BC9F4 /* Frameworks */,
 				3C0DFCAF21F2ECCE006BC9F4 /* Resources */,
+				448787BD5062BDAE2FDBC36C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,44 +167,75 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C0DFCBF21F2ECCF006BC9F4 /* LaunchScreen.storyboard in Resources */,
+				3C0DFCCC21F2F4A2006BC9F4 /* Launch Screen.storyboard in Resources */,
 				3C0DFCBC21F2ECCF006BC9F4 /* Assets.xcassets in Resources */,
-				3C0DFCBA21F2ECCE006BC9F4 /* Main.storyboard in Resources */,
+				3C0DFCCA21F2F368006BC9F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		448787BD5062BDAE2FDBC36C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Picfare/Pods-Picfare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Picfare/Pods-Picfare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABF91C66DDB702852A78F5B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Picfare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C0DFCAD21F2ECCE006BC9F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C0DFCB721F2ECCE006BC9F4 /* ViewController.swift in Sources */,
+				3C0DFCC721F2ED0A006BC9F4 /* API.swift in Sources */,
 				3C0DFCB521F2ECCE006BC9F4 /* AppDelegate.swift in Sources */,
+				3C0DFCCF21F2F7F3006BC9F4 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		3C0DFCB821F2ECCE006BC9F4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C0DFCB921F2ECCE006BC9F4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3C0DFCBD21F2ECCF006BC9F4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C0DFCBE21F2ECCF006BC9F4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3C0DFCC121F2ECCF006BC9F4 /* Debug */ = {
@@ -280,6 +356,7 @@
 		};
 		3C0DFCC421F2ECCF006BC9F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87834CF16AB681BE362B568D /* Pods-Picfare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +375,7 @@
 		};
 		3C0DFCC521F2ECCF006BC9F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B51ED1538FA9BC5D97D3BB0 /* Pods-Picfare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
