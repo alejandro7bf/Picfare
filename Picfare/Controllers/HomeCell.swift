@@ -9,9 +9,9 @@
 import UIKit
 
 class HomeCell: UICollectionViewCell {
-    
 
-    @IBOutlet weak var Title: UILabel!
-    
-    
+    @IBOutlet weak var poster: UIImageView!
+
 }
+
+

@@ -16,8 +16,6 @@ class Movie {
     var popularity, vote_average: Double?
     var release_date: Date?
  
- 
-    
     var path: String  {
         return ""
     }
