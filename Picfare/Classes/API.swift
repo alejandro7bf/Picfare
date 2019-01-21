@@ -14,7 +14,7 @@ class API {
 
     
     func DataRequest(urlpath: String , completion: @escaping (JSON) -> Void ) {
-        print(urlpath)
+
         //Alamofire función para la petición get
         Alamofire.request(urlpath, method: .get).validate().responseJSON { response in
             switch response.result {

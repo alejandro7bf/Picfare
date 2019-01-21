@@ -22,7 +22,7 @@ class Movie {
     
 
     
-    func load_data(completion: @escaping (Array<Movie>) -> Void ) {
+func load_data(completion: @escaping (Array<Movie>) -> Void ) {
         var List: [Movie] = []
          let Connection = API()
     
@@ -42,6 +42,7 @@ class Movie {
             Mov.release_date = object["release_date"].rawValue as? Date
             
             List.append(Mov)
+
         }
          completion(List)
         }
