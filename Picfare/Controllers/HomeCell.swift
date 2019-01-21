@@ -11,6 +11,7 @@ import UIKit
 class HomeCell: UICollectionViewCell {
 
     @IBOutlet weak var poster: UIImageView!
+    
 
 }
 

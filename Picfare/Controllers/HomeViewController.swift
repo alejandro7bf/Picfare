@@ -8,8 +8,12 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-   
+class HomeViewController: UIViewController{//, UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    /*
+    
+    @IBOutlet weak var TableViewRow: HomeTableCell!
+    
     
     @IBOutlet weak var TableData: UICollectionView!
     
@@ -119,7 +123,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
  
 
  
-
+*/
 }
 
 extension UIImageView {
