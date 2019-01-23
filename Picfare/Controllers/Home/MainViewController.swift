@@ -25,10 +25,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
+            loadData(movie: UpComing())
+            loadData(movie: Popular())
+            loadData(movie: TopRated())
+            
         
-        loadData(movie: UpComing())
-        loadData(movie: Popular())
-        loadData(movie: TopRated())
+       
        
   
         self.TableData.delegate = self
@@ -149,13 +152,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
 }
 
-
+import Alamofire
 
 extension UIImageView {
+  
     
     func load_image(url: URL) {
+        
+      
+        
         if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
+                
                     DispatchQueue.main.async {
                         self.image = image
                     }

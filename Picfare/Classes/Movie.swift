@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 class Movie {
-    //Se declaran las variables INT, DOUBLE, STRING & DATE.
+    
     
     var id, vote_count: Int?
     var title, overview, poster_path, original_language, original_title: String?
@@ -46,9 +46,23 @@ func load_data(completion: @escaping (Array<Movie>) -> Void ) {
         }
          completion(List)
         }
-       
   
     }
+    
+    func load_video(completion: @escaping (String) -> Void ) {
+        var videokey: String = ""
+        let Connection = API()
+
+        let url: String = "https://api.themoviedb.org/3/movie/" + String(describing: self.id!) + "/videos?api_key=aff8de1ea0379ead48969bbdd9ce5460&language=en-US"
+      
+        Connection.DataRequest(urlpath: url) { (response) in
+            
+            videokey = (response[0]["key"].rawValue as? String)!
+            completion(videokey)
+        }
+        
+    }
+    
     
     
     

@@ -20,16 +20,16 @@ class API {
             switch response.result {
             case .success(let value):
                 //Devuelve el json 'results'
+                
                 completion(JSON(value)["results"])
                 
             case .failure(let error):
                 print(error)
         }
-            
-       
-        
+    }
+
     }
     
-    
-    }
+
+
 }
