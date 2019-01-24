@@ -9,4 +9,5 @@ target 'Picfare' do
 
 pod 'SwiftyJSON', '~> 4.0'
 pod 'Alamofire', '~> 4.7'
+
 end
