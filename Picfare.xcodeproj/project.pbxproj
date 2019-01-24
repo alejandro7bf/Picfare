@@ -11,8 +11,8 @@
 		3C0DFCB521F2ECCE006BC9F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DFCB421F2ECCE006BC9F4 /* AppDelegate.swift */; };
 		3C0DFCBC21F2ECCF006BC9F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0DFCBB21F2ECCF006BC9F4 /* Assets.xcassets */; };
 		3C0DFCC721F2ED0A006BC9F4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DFCC621F2ED0A006BC9F4 /* API.swift */; };
-		3C0DFCCA21F2F368006BC9F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0DFCC921F2F368006BC9F4 /* Main.storyboard */; };
-		3C0DFCCC21F2F4A2006BC9F4 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0DFCCB21F2F4A2006BC9F4 /* Launch Screen.storyboard */; };
+		3C6425C121FA7F57006E97DD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6425C021FA7F57006E97DD /* Launch Screen.storyboard */; };
+		3C6425C321FA7F5C006E97DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6425C221FA7F5C006E97DD /* Main.storyboard */; };
 		3C77CC4221F63DF400E54E70 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C77CC4121F63DF400E54E70 /* MainViewController.swift */; };
 		3C77CC4721F6850E00E54E70 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C77CC4621F6850E00E54E70 /* DetailViewController.swift */; };
 		3C9341D121F5541C001106CB /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9341D021F5541C001106CB /* Movie.swift */; };
@@ -29,8 +29,8 @@
 		3C0DFCBB21F2ECCF006BC9F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C0DFCC021F2ECCF006BC9F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C0DFCC621F2ED0A006BC9F4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		3C0DFCC921F2F368006BC9F4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../Documents/Main.storyboard; sourceTree = "<group>"; };
-		3C0DFCCB21F2F4A2006BC9F4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../../../../Documents/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		3C6425C021FA7F57006E97DD /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		3C6425C221FA7F5C006E97DD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3C77CC4121F63DF400E54E70 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3C77CC4621F6850E00E54E70 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3C9341D021F5541C001106CB /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 		3C0DFCC821F2F268006BC9F4 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				3C0DFCC921F2F368006BC9F4 /* Main.storyboard */,
-				3C0DFCCB21F2F4A2006BC9F4 /* Launch Screen.storyboard */,
+				3C6425C221FA7F5C006E97DD /* Main.storyboard */,
+				3C6425C021FA7F57006E97DD /* Launch Screen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -212,9 +212,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C0DFCCC21F2F4A2006BC9F4 /* Launch Screen.storyboard in Resources */,
+				3C6425C321FA7F5C006E97DD /* Main.storyboard in Resources */,
+				3C6425C121FA7F57006E97DD /* Launch Screen.storyboard in Resources */,
 				3C0DFCBC21F2ECCF006BC9F4 /* Assets.xcassets in Resources */,
-				3C0DFCCA21F2F368006BC9F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
