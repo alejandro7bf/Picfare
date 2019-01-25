@@ -8,10 +8,10 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource{
     
    
-     let URL_PREFIX = "https://image.tmdb.org/t/p/w200/"
+    let URL_PREFIX = "https://image.tmdb.org/t/p/w200/"
     var Group = ["Up Coming", "Popular", "Top Rated"]
     
     @IBOutlet weak var TableData: UITableView!
@@ -22,30 +22,38 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     var movieToDetail = Movie()
     
+    let color = #colorLiteral(red: 0.0709286711, green: 0.07564300278, blue: 0.08315775233, alpha: 1)
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
+
+        //Calls the function load data with its own object
             loadData(movie: UpComing())
             loadData(movie: Popular())
             loadData(movie: TopRated())
-            
         
-       
-       
-  
+        //Delegates
         self.TableData.delegate = self
         self.TableData.dataSource = self
-        self.TableData.rowHeight = 240
         
-        self.TableData.backgroundColor = UIColor.black
-        self.view.backgroundColor = UIColor.black
-        self.TableData.separatorColor = UIColor.black
+        //UI design
+   
+        self.TableData.rowHeight = 300
+        self.TableData.backgroundColor = color
+        self.view.backgroundColor = color
+        self.TableData.separatorColor = color
         
       
         
     }
     
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    //Load the data for each object upcoming, popular and toprated.
     func loadData(movie: Movie){
         
         movie.load_data { (response) in
@@ -69,6 +77,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
+    //For each cell of the table view do this ->
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = TableData.dequeueReusableCell(withIdentifier: "HomeTableCell") as! HomeTableCell
@@ -80,11 +89,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.CollectionRow.dataSource = self
         cell.CollectionRow.tag = indexPath.row
         cell.CollectionRow.reloadData()
-        cell.backgroundColor = UIColor.black
+        
+         cell.backgroundColor = color
+        cell.CollectionRow.backgroundColor = color
         
         return cell
     }
 
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
   
@@ -98,6 +110,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     }
     
+    //For each cell the collection view inside table view do this ->
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
         
@@ -112,6 +125,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
       
     }
     
+    //load the info that the cell contains
     func loadcell (List: Array<Movie>, index: IndexPath, cell: HomeCell) -> HomeCell {
         
         let movie = List[index.row]
@@ -120,7 +134,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-    
+    //If its selected a cell in a collection view, also check wichk cell from table view.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         switch collectionView.tag {
@@ -137,7 +151,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         }
     
-    
+    //Prepare the segue for sending the object movie with its own info.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.destination is DetailViewController
@@ -147,29 +161,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
  
-
-    
-    
-}
-
-import Alamofire
-
-extension UIImageView {
   
     
-    func load_image(url: URL) {
-        
-      
-        
-        if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                
-                    DispatchQueue.main.async {
-                        self.image = image
-                    }
-               }
-          }
-    }
-    
 }
+
+
+
+
+
 

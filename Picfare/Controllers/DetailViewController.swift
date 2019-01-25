@@ -27,50 +27,84 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var Star5: UIButton!
     var stars: [UIButton] = []
 
+    @IBOutlet weak var releasedate: UILabel!
     @IBOutlet weak var VoteCount: UILabel!
-    
+    let color = #colorLiteral(red: 0.0709286711, green: 0.07564300278, blue: 0.08315775233, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       stars.append(Star1)
-        stars.append(Star2)
-        stars.append(Star3)
-        stars.append(Star4)
-        stars.append(Star5)
         
-        self.Activity.transform = CGAffineTransform(scaleX: 1.6, y: 1.6)
+        
+        //Activity indicator
+        self.Activity.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         video.navigationDelegate = self
         self.video.addSubview(self.Activity)
         self.Activity.startAnimating()
        
-        load_stars()
-        movie.load_video { (response) in
-            if !(response.isEmpty) {
-            let URLvideo: URL = NSURL(string: "https://www.youtube.com/embed/" + response )! as URL
-            let myrequest = URLRequest(url: URLvideo)
-            self.video.load(myrequest)
-            }
-       }
-        
-     
-        Titlelabel.text = movie.title!
-        Overviewtext.text = movie.overview!
-        
-        let urlimage = NSURL(string: URL_PREFIX + movie.poster_path!)! as URL
-        Image.load_image(url: urlimage)
+        //Call the functions that shows the info.
+        show_video()
+        show_stars()
+        show_data()
     
+        //UI Design
+          self.video.backgroundColor = color
+          self.view.backgroundColor = color
+          self.Overviewtext.backgroundColor = color
+        
+          self.Overviewtext.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+          self.Titlelabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+          self.VoteCount.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+          self.releasedate.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 
     }
     
     
     
+    
+    //Stops the activity indicator
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
       self.Activity.stopAnimating()
     }
     
     
     
-    func load_stars(){
+    
+    
+    //Shows the data in the labels, ect.
+    func show_data(){
+        Titlelabel.text = movie.title!
+        Overviewtext.text = movie.overview!
+        releasedate.text = "Release date: " + movie.release_date!
+        let urlimage = NSURL(string: URL_PREFIX + movie.poster_path!)! as URL
+        Image.load_image(url: urlimage)
+        
+        }
+    
+    
+    
+    
+    //Shows the video from youtube.
+    func show_video(){
+        movie.load_video { (response) in
+            if !(response.isEmpty) {
+                let URLvideo: URL = NSURL(string: "https://www.youtube.com/embed/" + response )! as URL
+                let myrequest = URLRequest(url: URLvideo)
+                self.video.load(myrequest)
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    //Shows the stars
+    func show_stars(){
+        stars.append(Star1)
+        stars.append(Star2)
+        stars.append(Star3)
+        stars.append(Star4)
+        stars.append(Star5)
         let number: Double = movie.vote_average!/2
         let Decimalpart: Double = number - Double(Int(number))
         VoteCount.text = "(" + String(movie.vote_count!) + ")"
