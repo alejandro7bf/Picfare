@@ -17,8 +17,10 @@ extension UIImageView {
         //not every time the image its being downloaded
         if let cachedImage = imageCache.object(forKey: urlstring as NSString) {
             self.image = cachedImage
+            //print("the image is in cache: ", urlstring)
             return
         } else {
+            //print("the image is downloaded: ", urlstring)
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
