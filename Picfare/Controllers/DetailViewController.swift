@@ -29,7 +29,7 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var releasedate: UILabel!
     @IBOutlet weak var VoteCount: UILabel!
-    let color = #colorLiteral(red: 0.0709286711, green: 0.07564300278, blue: 0.08315775233, alpha: 1)
+    let color = #colorLiteral(red: 0.1089653285, green: 0.1162077975, blue: 0.1277524541, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
