@@ -25,7 +25,7 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var Star3: UIButton!
     @IBOutlet weak var Star4: UIButton!
     @IBOutlet weak var Star5: UIButton!
-    var stars: [UIButton] = []
+    lazy var stars: [UIButton] = [Star1, Star2, Star3, Star4, Star5]
 
     @IBOutlet weak var releasedate: UILabel!
     @IBOutlet weak var VoteCount: UILabel!
@@ -59,6 +59,10 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     }
     
     
+    // bar status white
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
     
     
     //Stops the activity indicator
@@ -72,12 +76,24 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     
     //Shows the data in the labels, ect.
     func show_data(){
-        Titlelabel.text = movie.title!
-        Overviewtext.text = movie.overview!
-        releasedate.text = "Release date: " + movie.release_date!
-        let urlimage = NSURL(string: URL_PREFIX + movie.poster_path!)! as URL
-        Image.load_image(url: urlimage)
-        
+        //Best way to deal with optional values and avoid a crash displaying data.
+        if let movietitle = movie.title{
+            Titlelabel.text = movietitle
+        }
+        if let overview = movie.overview{
+            Overviewtext.text = overview
+        }
+        if let votecount = movie.vote_count{
+            VoteCount.text = "(" + String(votecount) + ")"
+        }
+        if let release = movie.release_date{
+            releasedate.text = "Release date: " + release
+        }
+        if let posterpath = movie.poster_path{
+            let urlimage = NSURL(string: URL_PREFIX + posterpath)! as URL
+            Image.load_image(url: urlimage)
+        }
+  
         }
     
     
@@ -100,32 +116,29 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     
     //Shows the stars
     func show_stars(){
-        stars.append(Star1)
-        stars.append(Star2)
-        stars.append(Star3)
-        stars.append(Star4)
-        stars.append(Star5)
-        let number: Double = movie.vote_average!/2
+        //Avoiding nil values.
+        if let voteaverage = movie.vote_average{
+       
+        let number = voteaverage/2
         let Decimalpart: Double = number - Double(Int(number))
-        VoteCount.text = "(" + String(movie.vote_count!) + ")"
-
+        
         let index: Int = Int(number)
         var i = 0
         while i < index {
-            
+            //Show a full star until i + 1 = index when it depends on the number could be an empty star (<=0.3) half star ( >0.3 & <0.8) and full star (>0.8)
             stars[i].setImage(UIImage(named: "ImageFull"), for: UIControl.State.normal)
-            
             if i + 1 == index {
                 if Decimalpart > 0.3 && Decimalpart < 0.8{
                     stars[i + 1].setImage(UIImage(named: "StarHalf"), for: UIControl.State.normal)
                 }else if Decimalpart >= 0.8 {
                     stars[i+1].setImage(UIImage(named: "ImageFull"), for: UIControl.State.normal)
                 }
+                }
+                i = i + 1
             }
-            i = i + 1
-        
         }
     }
+
     
     
 

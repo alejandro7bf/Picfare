@@ -97,7 +97,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nWI-2u-FZD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="PICFARE" id="C2o-4n-aPK"/>
+                    <navigationItem key="navigationItem" title="P  I  C  F  A  R  E" id="C2o-4n-aPK"/>
                     <connections>
                         <outlet property="TableData" destination="tXJ-2c-qK0" id="y3t-7K-5LD"/>
                         <segue destination="NcI-6E-7Mq" kind="show" identifier="showdetail" id="Hig-Nf-QKe"/>

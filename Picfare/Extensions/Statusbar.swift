@@ -6,10 +6,11 @@
 //  Copyright © 2019 Picfare. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UINavigationController {
     override open var childForStatusBarStyle: UIViewController? {
         return self.topViewController
     }
 }
+ 

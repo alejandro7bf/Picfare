@@ -10,7 +10,6 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource{
     
-   
     let URL_PREFIX = "https://image.tmdb.org/t/p/w200/"
     var Group = ["Up Coming", "Popular", "Top Rated"]
     
@@ -21,11 +20,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     var dataUP: [Movie] = []
 
     var movieToDetail = Movie()
-    
     let color = #colorLiteral(red: 0.0709286711, green: 0.07564300278, blue: 0.08315775233, alpha: 1)
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,16 +35,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.TableData.dataSource = self
         
         //UI design
-   
         self.TableData.rowHeight = 300
         self.TableData.backgroundColor = color
         self.view.backgroundColor = color
         self.TableData.separatorColor = color
-        
-      
-        
+   
     }
     
+    // bar status white
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
@@ -67,15 +61,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    
-    
-    
+  //config of the tableview sections and rows in each section
     func numberOfSectionsInTableView(tableView: UITableView) -> Int { return 1 }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return Group.count
     }
-    
     
     //For each cell of the table view do this ->
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -87,7 +78,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         cell.CollectionRow.delegate = self
         cell.CollectionRow.dataSource = self
-        cell.CollectionRow.tag = indexPath.row
+        cell.CollectionRow.tag = indexPath.row //saving index collection view inside tableview
         cell.CollectionRow.reloadData()
         
          cell.backgroundColor = color
@@ -96,10 +87,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
 
-    
-    
+    //number of items in each collection view, depends on the table view row.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-  
         if collectionView.tag == 0 {
             return dataUP.count
         }else if collectionView.tag == 1 {
@@ -113,7 +102,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     //For each cell the collection view inside table view do this ->
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
-        
         
         if (collectionView.tag == 0){
             return loadcell(List: dataUP , index: indexPath, cell: cell)
@@ -129,8 +117,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func loadcell (List: Array<Movie>, index: IndexPath, cell: HomeCell) -> HomeCell {
         
         let movie = List[index.row]
-        let link: URL = NSURL(string: URL_PREFIX + movie.poster_path!)! as URL
-        cell.poster?.load_image(url: link)
+        if let posterpath = movie.poster_path{
+            let link: URL = NSURL(string: URL_PREFIX + posterpath)! as URL
+            cell.poster?.load_image(url: link)
+        }
         return cell
     }
     
